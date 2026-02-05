@@ -1,0 +1,179 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 30px auto;
+        }
+        h1, h2 {
+            color: #0056b3;
+            text-align: center;
+        }
+        .form-section {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 30px;
+        }
+        .form-section:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        form div {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="number"],
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .button-group button {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Disease Prediction App</h1>
+
+        <div class="form-section">
+            <h2>Heart Disease Prediction</h2>
+            <form action="/predict_heart" method="post">
+                <div>
+                    <label for="age_heart">Age:</label>
+                    <input type="number" id="age_heart" name="age" required>
+                </div>
+                <div>
+                    <label for="sex">Sex (0=female, 1=male):</label>
+                    <input type="number" id="sex" name="sex" required>
+                </div>
+                <div>
+                    <label for="cp">Chest Pain Type (0-3):</label>
+                    <input type="number" id="cp" name="cp" required>
+                </div>
+                <div>
+                    <label for="trestbps">Resting Blood Pressure (mm Hg):</label>
+                    <input type="number" id="trestbps" name="trestbps" required>
+                </div>
+                <div>
+                    <label for="chol">Cholesterol (mg/dl):</label>
+                    <input type="number" id="chol" name="chol" required>
+                </div>
+                <div>
+                    <label for="fbs">Fasting Blood Sugar > 120 mg/dl (0=false, 1=true):</label>
+                    <input type="number" id="fbs" name="fbs" required>
+                </div>
+                <div>
+                    <label for="restecg">Resting Electrocardiographic Results (0-2):</label>
+                    <input type="number" id="restecg" name="restecg" required>
+                </div>
+                <div>
+                    <label for="thalach">Maximum Heart Rate Achieved:</label>
+                    <input type="number" id="thalach" name="thalach" required>
+                </div>
+                <div>
+                    <label for="exang">Exercise Induced Angina (0=no, 1=yes):</label>
+                    <input type="number" id="exang" name="exang" required>
+                </div>
+                <div>
+                    <label for="oldpeak">ST Depression Induced by Exercise Relative to Rest:</label>
+                    <input type="number" id="oldpeak" name="oldpeak" step="0.1" required>
+                </div>
+                <div>
+                    <label for="slope">Slope of the Peak Exercise ST Segment (0-2):</label>
+                    <input type="number" id="slope" name="slope" required>
+                </div>
+                <div>
+                    <label for="ca">Number of Major Vessels (0-3) Colored by Fluoroscopy:</label>
+                    <input type="number" id="ca" name="ca" required>
+                </div>
+                <div>
+                    <label for="thal">Thalassemia (1=normal, 2=fixed defect, 3=reversible defect):</label>
+                    <input type="number" id="thal" name="thal" required>
+                </div>
+                <button type="submit">Predict Heart Disease</button>
+            </form>
+        </div>
+
+        <div class="form-section">
+            <h2>Pima Indians Diabetes Prediction</h2>
+            <form action="/predict_diabetes" method="post">
+                <div>
+                    <label for="pregnancies">Pregnancies:</label>
+                    <input type="number" id="pregnancies" name="Pregnancies" required>
+                </div>
+                <div>
+                    <label for="glucose">Glucose:</label>
+                    <input type="number" id="glucose" name="Glucose" required>
+                </div>
+                <div>
+                    <label for="bloodpressure">Blood Pressure:</label>
+                    <input type="number" id="bloodpressure" name="BloodPressure" required>
+                </div>
+                <div>
+                    <label for="skinthickness">Skin Thickness:</label>
+                    <input type="number" id="skinthickness" name="SkinThickness" required>
+                </div>
+                <div>
+                    <label for="insulin">Insulin:</label>
+                    <input type="number" id="insulin" name="Insulin" required>
+                </div>
+                <div>
+                    <label for="bmi">BMI:</label>
+                    <input type="number" id="bmi" name="BMI" step="0.1" required>
+                </div>
+                <div>
+                    <label for="dpf">Diabetes Pedigree Function:</label>
+                    <input type="number" id="dpf" name="DiabetesPedigreeFunction" step="0.001" required>
+                </div>
+                <div>
+                    <label for="age_diabetes">Age:</label>
+                    <input type="number" id="age_diabetes" name="Age" required>
+                </div>
+                <button type="submit">Predict Diabetes</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
