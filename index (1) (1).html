@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedPredict | XAI-Powered Clinical Diagnostics</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Syne:wght@700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<body>
+
+    <!-- ─── NAVBAR ─────────────────────────────────────────── -->
+    <nav class="navbar navbar-expand-lg sticky-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <span class="brand-med">MED</span><span class="brand-predict">PREDICT</span>
+                <span class="brand-dot"></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testing">Diagnostics</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="#testing" class="btn btn-nav-cta">Start Analysis</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ─── HERO ───────────────────────────────────────────── -->
+    <section id="home" class="hero-section">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="container position-relative">
+            <div class="row align-items-center min-vh-100 py-5">
+                <div class="col-lg-6 hero-content">
+                    <div class="badge-pill mb-4">
+                        <span class="badge-dot"></span> XAI-Powered Clinical Engine
+                    </div>
+                    <h1 class="hero-title">
+                        Predicting Risks.<br>
+                        <span class="hero-title-accent">Explaining Results.</span>
+                    </h1>
+                    <p class="hero-sub">
+                        An advanced clinical toolkit for healthcare professionals.
+                        Harness Explainable AI to assess cardiac and metabolic risk
+                        with full diagnostic transparency.
+                    </p>
+                    <div class="hero-stats row g-3 mb-5">
+                        <div class="col-4">
+                            <div class="stat-chip">
+                                <span class="stat-num">97%</span>
+                                <span class="stat-label">Accuracy</span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-chip">
+                                <span class="stat-num">2</span>
+                                <span class="stat-label">Disease Models</span>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="stat-chip">
+                                <span class="stat-num">XAI</span>
+                                <span class="stat-label">Explainable</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#testing" class="btn btn-primary-custom btn-lg">
+                            <i class="bi bi-activity me-2"></i>Start Prediction
+                        </a>
+                        <a href="#about" class="btn btn-ghost-custom btn-lg">
+                            Technical Overview <i class="bi bi-arrow-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center mt-5 mt-lg-0">
+                    <div class="hero-img-wrapper">
+                        <img src="{{ url_for('static', filename='home_image.webp') }}" alt="AI Medical Interface" class="hero-img">
+                        <div class="hero-img-ring hero-img-ring-1"></div>
+                        <div class="hero-img-ring hero-img-ring-2"></div>
+                        <div class="floating-card fc-top">
+                            <i class="bi bi-heart-pulse-fill text-danger"></i>
+                            <span>Cardiac Risk Analysis</span>
+                        </div>
+                        <div class="floating-card fc-bottom">
+                            <i class="bi bi-droplet-fill text-info"></i>
+                            <span>Diabetes Screening</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <span>Scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- ─── ABOUT ──────────────────────────────────────────── -->
+    <section id="about" class="about-section section-padding">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="about-image-frame">
+                        <img src="{{ url_for('static', filename='about_image.png') }}" alt="Clinical Prediction Interface" class="about-img">
+                        <div class="about-img-badge">
+                            <i class="bi bi-shield-check-fill"></i>
+                            <div>
+                                <strong>Clinically Validated</strong>
+                                <small>UCI & Pima Datasets</small>
+                            </div>
+                        </div>
+                        <div class="about-accent-lines"></div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <span class="section-eyebrow">Precision Health Technology</span>
+                    <h2 class="section-title">The Intelligence<br>Behind the Diagnosis</h2>
+                    <p class="section-sub">
+                        In an era of data-driven medicine, MedPredict provides healthcare professionals
+                        with a sophisticated diagnostic companion that identifies patterns preceding
+                        clinical symptoms of chronic conditions.
+                    </p>
+
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="bi bi-cpu"></i>
+                            </div>
+                            <div>
+                                <h5>Explainable AI (XAI)</h5>
+                                <p>Integrating LIME & SHAP to reveal exactly which patient biomarkers drive high-risk scores.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="bi bi-database-check"></i>
+                            </div>
+                            <div>
+                                <h5>Validated Clinical Data</h5>
+                                <p>Models trained on globally recognized UCI Cleveland & Pima Indian datasets.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="bi bi-file-earmark-medical"></i>
+                            </div>
+                            <div>
+                                <h5>Instant Diagnostic Reports</h5>
+                                <p>Generate printable clinical reports with confidence scores and risk breakdowns.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-tags mt-4">
+                        <span class="tech-tag">Random Forest</span>
+                        <span class="tech-tag">SVM</span>
+                        <span class="tech-tag">SHAP</span>
+                        <span class="tech-tag">LIME</span>
+                        <span class="tech-tag">Flask API</span>
+                        <span class="tech-tag">Scikit-Learn</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── DIAGNOSTIC PORTAL ─────────────────────────────── -->
+    <section id="testing" class="testing-section section-padding">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-eyebrow">AI Diagnostic Portal</span>
+                <h2 class="section-title">Clinical Analysis Engine</h2>
+                <p class="section-sub mx-auto" style="max-width:560px">
+                    Enter patient biomarkers below. The AI model will assess risk probability and
+                    provide an explainable breakdown of contributing factors.
+                </p>
+            </div>
+
+            <!-- Patient Admin Info -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-lg-10">
+                    <div class="admin-card">
+                        <div class="admin-card-header">
+                            <i class="bi bi-person-vcard-fill me-2"></i> Patient Information
+                        </div>
+                        <div class="row g-3 p-4">
+                            <div class="col-md-6">
+                                <label class="form-label-custom">PATIENT FULL NAME</label>
+                                <input type="text" class="form-control form-control-custom" id="pName" placeholder="e.g. John Doe">
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label-custom">LABORATORY / CLINIC</label>
+                                <input type="text" class="form-control form-control-custom" id="lName" placeholder="e.g. City Medical Centre">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Diagnostic Forms -->
+            <div class="row g-4 justify-content-center">
+
+                <!-- ── HEART FORM ── -->
+                <div class="col-lg-6">
+                    <div class="diag-card diag-card-heart">
+                        <div class="diag-card-header">
+                            <div class="diag-header-icon diag-icon-heart">
+                                <i class="bi bi-heart-pulse-fill"></i>
+                            </div>
+                            <div>
+                                <h5>Cardio Risk Analysis</h5>
+                                <small>UCI Cleveland Heart Disease Dataset — 13 Biomarkers</small>
+                            </div>
+                        </div>
+                        <form id="heartForm" novalidate>
+                            <div class="row g-3 mt-1">
+                                <div class="col-6">
+                                    <label class="form-label-custom">AGE <span class="unit">(years)</span></label>
+                                    <input type="number" class="form-control form-control-custom" name="age" placeholder="e.g. 52" min="1" max="120" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label-custom">SEX <span class="unit">(1=M, 0=F)</span></label>
+                                    <input type="number" class="form-control form-control-custom" name="sex" placeholder="0 or 1" min="0" max="1" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label-custom">CHEST PAIN TYPE <span class="unit">(0–3)</span></label>
+                                    <input type="number" class="form-control form-control-custom" name="cp" placeholder="0–3" min="0" max="3" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label-custom">RESTING BP <span class="unit">(mmHg)</span></label>
+                                    <input type="number" class="form-control form-control-custom" name="trestbps" placeholder="e.g. 130" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label-custom">CHOLESTEROL <span class="unit">(mg/dL)</span></label>
+                                    <input type="number" class="form-control form-control-custom" name="chol" placeholder="e.g. 250" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label-custom">FASTING BS <span class="unit">(1 if &gt;120)</span></label>
+                                    <input type="number" class="form-control form-control-custom" name="fbs" placeholder="0 or 1" min="0" max="1" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label-custom">RESTING ECG <span class="unit">(0–2)</span></label>
+                                    <input type="number" class="form-control form-control-custom" name="restecg" placeholder="0–2" min="0" max="2" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label-custom">MAX HEART RATE <span class="unit">(bpm)</span></label>
+                                    <input type="number" class="form-control form-control-custom" name="thalach" placeholder="e.g. 150" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label-custom">EXERCISE ANGINA <span class="unit">(1=Y)</span></label>
+                                    <input type="number" class="form-control form-control-custom" name="exang" placeholder="0 or 1" min="0" max="1" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label-custom">OLDPEAK <span class="unit">(ST depression)</span></label>
+                                    <input type="number" step="0.1" class="form-control form-control-custom" name="oldpeak" placeholder="e.g. 1.5" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label-custom">SLOPE <span class="unit">(0–2)</span></label>
+                                    <input type="number" class="form-control form-control-custom" name="slope" placeholder="0–2" min="0" max="2" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label-custom">CA <span class="unit">(0–3 vessels)</span></label>
+                                    <input type="number" class="form-control form-control-custom" name="ca" placeholder="0–3" min="0" max="3" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label-custom">THALASSEMIA <span class="unit">(1=Normal, 2=Fixed, 3=Reversible)</span></label>
+                                    <input type="number" class="form-control form-control-custom" name="thal" placeholder="1, 2, or 3" min="1" max="3" required>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-diag btn-diag-heart w-100 mt-4" onclick="generateReport('heart')">
+                                <i class="bi bi-activity me-2"></i>ANALYZE CARDIAC RISK
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- ── DIABETES FORM ── -->
+                <div class="col-lg-6">
+                    <div class="diag-card diag-card-diabetes">
+                        <div class="diag-card-header">
+                            <div class="diag-header-icon diag-icon-diabetes">
+                                <i class="bi bi-droplet-fill"></i>
+                            </div>
+                            <div>
+                                <h5>Diabetes Screening</h5>
+                                <small>Pima Indian Diabetes Dataset — 8 Biomarkers</small>
+                            </div>
+                        </div>
+                        <form id="diabetesForm" novalidate>
+                            <div class="row g-3 mt-1">
+                                <div class="col-6">
+                                    <label class="form-label-custom">PREGNANCIES <span class="unit">(count)</span></label>
+                                    <input type="number" class="form-control form-control-custom" name="preg" placeholder="e.g. 2" min="0" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label-custom">GLUCOSE <span class="unit">(mg/dL)</span></label>
+                                    <input type="number" class="form-control form-control-custom" name="glucose" placeholder="e.g. 120" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label-custom">BLOOD PRESSURE <span class="unit">(mmHg)</span></label>
+                                    <input type="number" class="form-control form-control-custom" name="bp" placeholder="e.g. 80" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label-custom">SKIN THICKNESS <span class="unit">(mm)</span></label>
+                                    <input type="number" class="form-control form-control-custom" name="skin" placeholder="e.g. 20" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label-custom">INSULIN <span class="unit">(μU/mL)</span></label>
+                                    <input type="number" class="form-control form-control-custom" name="insulin" placeholder="e.g. 79" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label-custom">BMI <span class="unit">(kg/m²)</span></label>
+                                    <input type="number" step="0.1" class="form-control form-control-custom" name="bmi" placeholder="e.g. 26.5" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label-custom">DIABETES PEDIGREE <span class="unit">(DPF)</span></label>
+                                    <input type="number" step="0.001" class="form-control form-control-custom" name="dpf" placeholder="e.g. 0.627" required>
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label-custom">AGE <span class="unit">(years)</span></label>
+                                    <input type="number" class="form-control form-control-custom" name="age" placeholder="e.g. 35" min="1" max="120" required>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-diag btn-diag-diabetes w-100 mt-4" onclick="generateReport('diabetes')">
+                                <i class="bi bi-droplet me-2"></i>ANALYZE DIABETES RISK
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── RESULT MODAL ──────────────────────────────────── -->
+    <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="reportModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content report-modal">
+                <div class="modal-header report-modal-header">
+                    <div class="report-header-logo">
+                        <span class="brand-med">MED</span><span class="brand-predict">PREDICT</span>
+                        <span class="brand-dot"></span>
+                    </div>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <!-- Loading State -->
+                    <div id="modalLoading" class="text-center py-5" style="display:none;">
+                        <div class="loading-pulse mb-3">
+                            <div class="pulse-ring"></div>
+                            <i class="bi bi-heart-pulse loading-icon"></i>
+                        </div>
+                        <p class="text-muted mt-3">Running AI Diagnostic Engine...</p>
+                    </div>
+
+                    <!-- Result Content -->
+                    <div id="modalResult">
+                        <div class="row g-3 mb-4">
+                            <div class="col-sm-6">
+                                <div class="report-info-pill">
+                                    <span class="rip-label"><i class="bi bi-person me-1"></i>Patient</span>
+                                    <span class="rip-value" id="outName">—</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="report-info-pill">
+                                    <span class="rip-label"><i class="bi bi-building-fill-cross me-1"></i>Laboratory</span>
+                                    <span class="rip-value" id="outLab">—</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="report-info-pill">
+                                    <span class="rip-label"><i class="bi bi-calendar me-1"></i>Date</span>
+                                    <span class="rip-value" id="outDate">—</span>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="report-info-pill">
+                                    <span class="rip-label"><i class="bi bi-cpu me-1"></i>Model</span>
+                                    <span class="rip-value" id="outModel">—</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Risk Alert -->
+                        <div id="resultAlert" class="result-alert mb-4">
+                            <div class="result-alert-icon" id="outIcon">
+                                <i class="bi bi-heart-pulse-fill"></i>
+                            </div>
+                            <div>
+                                <div class="result-alert-label">AI Assessment Result</div>
+                                <div class="result-alert-status" id="outResult">—</div>
+                            </div>
+                            <div class="result-confidence ms-auto">
+                                <div class="confidence-ring" id="outConfidenceRing">
+                                    <svg viewBox="0 0 60 60">
+                                        <circle cx="30" cy="30" r="25" stroke-dasharray="157" stroke-dashoffset="157" id="confCircle"></circle>
+                                    </svg>
+                                    <span id="outConfidenceText">0%</span>
+                                </div>
+                                <small>Confidence</small>
+                            </div>
+                        </div>
+
+                        <!-- XAI Explanation -->
+                        <div class="xai-box mb-4">
+                            <div class="xai-header">
+                                <i class="bi bi-lightbulb-fill me-2"></i>
+                                Explainable AI — Contributing Factors
+                            </div>
+                            <p id="outXAI" class="xai-text">—</p>
+                        </div>
+
+                        <!-- Disclaimer -->
+                        <div class="disclaimer-box">
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i>
+                            <strong>Clinical Disclaimer:</strong> This AI assessment is a decision-support tool only. 
+                            All results must be interpreted by a licensed healthcare professional. 
+                            Do not use as a sole basis for clinical decisions.
+                        </div>
+
+                        <div class="d-flex gap-3 mt-4">
+                            <button class="btn btn-primary-custom flex-fill" onclick="window.print()">
+                                <i class="bi bi-printer me-2"></i>Print Report
+                            </button>
+                            <button class="btn btn-ghost-custom flex-fill" data-bs-dismiss="modal">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ─── CONTACT ────────────────────────────────────────── -->
+    <section id="contact" class="contact-section section-padding">
+        <div class="container">
+            <div class="contact-card">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-7">
+                        <span class="section-eyebrow" style="color:#60a5fa">Get In Touch</span>
+                        <h2 class="section-title text-white mt-2">Let's Connect</h2>
+                        <p class="text-white-50">
+                            Based in Lucknow, Uttar Pradesh — dedicated to advancing medical AI.
+                            Reach out for collaborations, research partnerships, or technical support.
+                        </p>
+                        <div class="contact-links mt-4">
+                            <a href="mailto:support@medpredict.ai" class="contact-link">
+                                <i class="bi bi-envelope-fill"></i>
+                                support@medpredict.ai
+                            </a>
+                            <a href="#" class="contact-link">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                Lucknow, Uttar Pradesh, India
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-md-5 text-md-end">
+                        <div class="footer-brand">
+                            <div class="footer-logo">MED<span>PREDICT</span></div>
+                            <p class="text-white-50 small mt-2">XAI-Powered Clinical Diagnostics</p>
+                            <p class="text-white-50 small">© 2026 MedPredict AI. All Rights Reserved.</p>
+                            <div class="footer-badges mt-3">
+                                <span class="footer-badge">B.Tech Final Year Project</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
